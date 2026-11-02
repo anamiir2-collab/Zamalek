@@ -35,7 +35,11 @@ export const STAGES_INDEX = [
   { id: 23, title: 'كؤوس السوبر الإفريقي', subtitle: 'خمس محطات ذهبية في السوبر القاري', icon: '⭐', difficulty: 'hard', points: 140, theme: 'linear-gradient(135deg,#7e57c2,#4527a0)' },
   { id: 24, title: 'تاريخ كأس مصر', subtitle: 'محطات الزمالك في أقدم مسابقات الكأس المحلية', icon: '🥇', difficulty: 'medium', points: 120, theme: 'linear-gradient(135deg,#ba68c8,#6a1b9a)' },
   { id: 25, title: 'ملوك الدوري المصري', subtitle: 'رحلة الزمالك عبر مواسم الدوري الممتاز', icon: '🏆', difficulty: 'medium', points: 120, theme: 'linear-gradient(135deg,#ff8a65,#d84315)' },
-  { id: 26, title: 'السوبر المصري', subtitle: 'مباريات حسم الكؤوس المحلية ومواجهات القمة', icon: '⚽', difficulty: 'medium', points: 120, theme: 'linear-gradient(135deg,#4db6ac,#00695c)' }
+  { id: 26, title: 'السوبر المصري', subtitle: 'مباريات حسم الكؤوس المحلية ومواجهات القمة', icon: '⚽', difficulty: 'medium', points: 120, theme: 'linear-gradient(135deg,#4db6ac,#00695c)' },
+  { id: 27, title: 'نجوم القلعة البيضاء', subtitle: 'أسماء صنعت لحظات لا تُنسى', icon: '🌟', difficulty: 'medium', points: 120, theme: 'linear-gradient(135deg,#f06292,#ad1457)' },
+  { id: 28, title: 'حراس العرين الأبيض', subtitle: 'حراس مرمى ارتدوا قميص الزمالك', icon: '🧤', difficulty: 'medium', points: 120, theme: 'linear-gradient(135deg,#81c784,#2e7d32)' },
+  { id: 29, title: 'مدربو الزمالك', subtitle: 'المدربون في المحطات التاريخية', icon: '🧠', difficulty: 'medium', points: 120, theme: 'linear-gradient(135deg,#ffb74d,#e65100)' },
+  { id: 30, title: 'نجوم من مصر والعالم', subtitle: 'لاعبون دوليون مرّوا على تاريخ الزمالك', icon: '🌍', difficulty: 'medium', points: 120, theme: 'linear-gradient(135deg,#26c6da,#00838f)' }
 ];
 
 /** مسارات ملفات المراحل */
@@ -48,7 +52,9 @@ const REGISTRY = {
   16: './stages/stage-16.js', 17: './stages/stage-17.js', 18: './stages/stage-18.js',
   19: './stages/stage-19.js', 20: './stages/stage-20.js',
   21: './stages/stage-21.js', 22: './stages/stage-22.js', 23: './stages/stage-23.js',
-  24: './stages/stage-24.js', 25: './stages/stage-25.js', 26: './stages/stage-26.js'
+  24: './stages/stage-24.js', 25: './stages/stage-25.js', 26: './stages/stage-26.js',
+  27: './stages/stage-27.js', 28: './stages/stage-28.js', 29: './stages/stage-29.js',
+  30: './stages/stage-30.js'
 };
 
 /** مخزن مؤقت لتجنب التحميل المتكرر */
