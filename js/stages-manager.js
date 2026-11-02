@@ -1,5 +1,3 @@
-import { expandStageQuestions } from './question-bank.js';
-
 /* ============================================================
    ZAMALEK LEGENDS – أسطورة الزمالك
    stages-manager.js : الفهرس المركزي للمراحل + التحميل الديناميكي
@@ -70,7 +68,7 @@ export async function loadStage(id) {
     }
     // دمج بيانات العرض من الفهرس المركزي مع بيانات الملف
     const meta = getStageMeta(id);
-    const merged = { ...meta, ...stage, id, questions: expandStageQuestions(stage) };
+    const merged = { ...meta, ...stage, id };
     cache.set(id, merged);
     return merged;
   } catch (err) {
