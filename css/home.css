@@ -1,0 +1,192 @@
+/* ============================================================
+   ZAMALEK LEGENDS – أسطورة الزمالك
+   home.css : الشاشة الرئيسية
+   ============================================================ */
+
+/* ---------- البطل / الغلاف ---------- */
+.hero {
+  position: relative;
+  border-radius: 26px;
+  overflow: hidden;
+  background:
+    radial-gradient(1200px 400px at 80% -10%, rgba(211, 47, 47, .16), transparent 60%),
+    radial-gradient(900px 380px at 10% 110%, rgba(20, 20, 20, .12), transparent 55%),
+    linear-gradient(150deg, #ffffff 0%, #f4f6f9 60%, #eceff4 100%);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+  padding: 34px 22px 26px;
+  text-align: center;
+}
+
+html[data-theme="dark"] .hero {
+  background:
+    radial-gradient(1200px 400px at 80% -10%, rgba(211, 47, 47, .2), transparent 60%),
+    radial-gradient(900px 380px at 10% 110%, rgba(255, 255, 255, .05), transparent 55%),
+    linear-gradient(150deg, #20232a 0%, #1a1d23 60%, #171920 100%);
+}
+
+.hero .emblem {
+  width: 110px;
+  margin: 0 auto 12px;
+  filter: drop-shadow(0 10px 22px rgba(211, 47, 47, .3));
+  animation: floaty 4.5s ease-in-out infinite;
+}
+
+.hero .game-title {
+  font-size: clamp(1.9rem, 6vw, 2.7rem);
+  font-weight: 900;
+  line-height: 1.25;
+  background: linear-gradient(120deg, var(--red), var(--black) 60%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+html[data-theme="dark"] .hero .game-title {
+  background: linear-gradient(120deg, var(--red-light), #ffffff 75%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.hero .tagline {
+  margin-top: 6px;
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.hero .welcome {
+  margin-top: 14px;
+  font-size: .92rem;
+  font-weight: 700;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px dashed var(--border);
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 999px;
+}
+
+.hero .welcome b { color: var(--red); }
+
+/* ---------- قائمة الأزرار الرئيسية ---------- */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.menu-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 15px 16px;
+  font-weight: 800;
+  font-size: .98rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform .18s ease, box-shadow .25s ease, border-color .2s ease;
+  min-height: 62px;
+}
+
+.menu-btn .mi {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  border-radius: 13px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  background: rgba(211, 47, 47, .1);
+}
+
+.menu-btn:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: rgba(211,47,47,.35); }
+.menu-btn:active { transform: scale(.97); }
+
+.menu-btn.start {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, var(--red), var(--red-dark));
+  color: #fff;
+  border: none;
+  box-shadow: 0 10px 26px rgba(211, 47, 47, .35);
+  justify-content: center;
+  font-size: 1.12rem;
+}
+
+.menu-btn.start .mi { background: rgba(255, 255, 255, .18); }
+
+.menu-btn.resume { grid-column: 1 / -1; border-style: dashed; }
+
+/* ---------- مستوى اللاعب ---------- */
+.level-card {
+  margin-top: 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 18px;
+  box-shadow: var(--shadow-sm);
+}
+
+.level-card .lvl-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.level-card .lvl-name { font-weight: 900; font-size: 1.08rem; }
+
+.level-card .lvl-name span { color: var(--red); }
+
+.level-card .next {
+  font-size: .78rem;
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
+/* ---------- إحصائيات اللاعب ---------- */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.stat-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: transform .18s ease;
+}
+
+.stat-card:hover { transform: translateY(-3px); }
+
+.stat-card .num {
+  font-size: 1.55rem;
+  font-weight: 900;
+  color: var(--red);
+  line-height: 1.2;
+}
+
+.stat-card .lbl {
+  margin-top: 4px;
+  font-size: .8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+/* ---------- نافذة اسم اللاعب ---------- */
+.name-modal .emblem-sm { width: 74px; margin: 0 auto 10px; }
+
+@media (max-width: 480px) {
+  .menu-grid { grid-template-columns: 1fr; }
+  .hero { padding: 26px 16px 20px; }
+}

@@ -1,0 +1,188 @@
+/* ============================================================
+   ZAMALEK LEGENDS – أسطورة الزمالك
+   stages.css : خريطة المراحل + بطاقاتها + نافذة التفاصيل
+   ============================================================ */
+
+/* ---------- شريط الملخص أعلى الخريطة ---------- */
+.map-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 14px 18px;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 18px;
+}
+
+.map-summary .stars-count { font-weight: 900; color: var(--gold); }
+
+.map-summary .progress { flex: 1 1 180px; }
+
+/* ---------- شبكة المراحل ---------- */
+.stages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 14px;
+}
+
+.stage-card {
+  position: relative;
+  border-radius: 20px;
+  padding: 16px;
+  color: #fff;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(255, 255, 255, .25);
+  transition: transform .2s ease, box-shadow .25s ease;
+  min-height: 148px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: right;
+}
+
+.stage-card:hover { transform: translateY(-4px) scale(1.01); box-shadow: var(--shadow-lg); }
+.stage-card:active { transform: scale(.98); }
+
+.stage-card .num {
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  font-size: 2.1rem;
+  font-weight: 900;
+  opacity: .18;
+  line-height: 1;
+}
+
+.stage-card .s-icon { font-size: 1.7rem; }
+
+.stage-card h3 {
+  font-size: 1.06rem;
+  font-weight: 900;
+  line-height: 1.35;
+}
+
+.stage-card .s-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
+.stage-card .s-meta .badge {
+  background: rgba(255, 255, 255, .16);
+  border-color: rgba(255, 255, 255, .3);
+  color: #fff;
+  backdrop-filter: blur(2px);
+}
+
+.stage-card .s-stars { color: var(--gold); font-size: .95rem; letter-spacing: 2px; }
+
+/* حالة مقفلة */
+.stage-card.locked {
+  background: repeating-linear-gradient(
+    135deg,
+    var(--surface-2), var(--surface-2) 12px,
+    var(--gray-light) 12px, var(--gray-light) 24px
+  );
+  color: var(--text-muted);
+  border-color: var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+html[data-theme="dark"] .stage-card.locked {
+  background: repeating-linear-gradient(135deg, #1b1d23, #1b1d23 12px, #22252c 12px, #22252c 24px);
+}
+
+.stage-card.locked .s-meta .badge {
+  background: var(--surface);
+  border-color: var(--border);
+  color: var(--text-muted);
+}
+
+.stage-card.locked:hover { transform: none; box-shadow: var(--shadow-sm); }
+
+.stage-card.locked .lock-ico {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.4rem;
+  opacity: .8;
+}
+
+.stage-card.completed::after {
+  content: "✓";
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(46, 125, 50, .9);
+  color: #fff;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .9rem;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
+}
+
+/* ---------- نافذة تفاصيل المرحلة ---------- */
+.stage-modal .head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.stage-modal .head .s-icon {
+  width: 58px;
+  height: 58px;
+  min-width: 58px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: #fff;
+  box-shadow: var(--shadow-sm);
+}
+
+.stage-modal .desc {
+  color: var(--text-muted);
+  font-weight: 600;
+  line-height: 1.9;
+  font-size: .95rem;
+}
+
+.stage-modal .info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.stage-modal .info-grid .cell {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 10px 12px;
+  text-align: center;
+}
+
+.stage-modal .info-grid .cell b { display: block; font-size: .95rem; }
+.stage-modal .info-grid .cell span { font-size: .74rem; color: var(--text-muted); font-weight: 700; }
+
+/* تحديد مظهر الصعوبة */
+.diff-easy { color: #2e7d32 !important; }
+.diff-medium { color: #b8860b !important; }
+.diff-hard { color: var(--red) !important; }
+.diff-legend { color: #6a1b9a !important; }
