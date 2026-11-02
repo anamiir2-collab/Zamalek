@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="أسطورة الزمالك — لعبة تفاعلية لاستكشاف تاريخ نادي الزمالك من التأسيس عام 1911 حتى العصر الحديث، مع 20 مرحلة وموسوعة تاريخية">
+  <meta name="theme-color" content="#d32f2f">
+  <title>أسطورة الزمالك | ZAMALEK LEGENDS</title>
+  <link rel="icon" type="image/svg+xml" href="./assets/icons/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/home.css">
+  <link rel="stylesheet" href="./css/stages.css">
+  <link rel="stylesheet" href="./css/game.css">
+  <link rel="stylesheet" href="./css/animations.css">
+</head>
+<body>
+  <div class="app">
+
+    <!-- الشريط العلوي -->
+    <header class="topbar" aria-label="الشريط العلوي">
+      <div class="brand">
+        <img src="./assets/icons/emblem.svg" alt="شعار أسطورة الزمالك" width="38">
+        <div>
+          أسطورة الزمالك
+          <small>التاريخ يُحكى... والأساطير لا تُنسى</small>
+        </div>
+      </div>
+      <div class="topbar-actions">
+        <span class="points-chip" id="hud-points" title="نقاطك">⚡ <b id="hud-points-num">0</b></span>
+        <button class="icon-btn" id="btn-sound" title="الصوت" aria-label="تشغيل أو إيقاف الصوت">🔊</button>
+        <button class="icon-btn" id="btn-theme" title="الوضع الليلي" aria-label="تبديل الوضع الليلي">🌙</button>
+      </div>
+    </header>
+
+    <main style="flex:1">
+
+      <!-- ================= الشاشة الرئيسية ================= -->
+      <section class="screen" id="screen-home" aria-label="الشاشة الرئيسية">
+        <div class="hero">
+          <img class="emblem" src="./assets/icons/emblem.svg" alt="درع أسطورة الزمالك">
+          <h1 class="game-title">أسطورة الزمالك</h1>
+          <p class="tagline">🏹 التاريخ يُحكى... والأساطير لا تُنسى</p>
+          <p class="welcome">أهلًا بك <b id="welcome-name">زملكاوي</b> — رحلتك من 1911 إلى الأسطورة تبدأ من هنا ⚪🔴</p>
+        </div>
+
+        <div class="menu-grid" role="navigation" aria-label="القائمة الرئيسية">
+          <button class="menu-btn start" id="btn-start-adventure">
+            <span class="mi">🏹</span> ابدأ المغامرة
+          </button>
+          <button class="menu-btn resume" id="btn-resume" hidden>
+            <span class="mi">⏳</span>
+            <span class="grow">
+              استكمال اللعب
+              <small class="muted" style="display:block;font-weight:600" id="resume-info">أنت في المرحلة...</small>
+            </span>
+          </button>
+          <button class="menu-btn" id="btn-go-stages">
+            <span class="mi">🗺️</span> خريطة المراحل
+          </button>
+          <button class="menu-btn" id="btn-go-achievements">
+            <span class="mi">🏅</span> إنجازاتي
+          </button>
+          <button class="menu-btn" id="btn-go-encyclopedia">
+            <span class="mi">📚</span> موسوعة الزمالك
+          </button>
+          <button class="menu-btn" id="btn-go-settings">
+            <span class="mi">⚙️</span> الإعدادات
+          </button>
+        </div>
+
+        <div class="level-card">
+          <div class="lvl-head">
+            <div class="lvl-name">🎖️ مستواك: <span id="lvl-name">مشجع جديد</span></div>
+            <div class="next" id="lvl-next"></div>
+          </div>
+          <div class="progress" role="progressbar" aria-label="تقدم المستوى">
+            <span id="lvl-bar" style="width:0%"></span>
+          </div>
+        </div>
+
+        <div class="stats-grid" aria-label="إحصائيات اللاعب">
+          <div class="stat-card"><div class="num" id="st-points">0</div><div class="lbl">إجمالي النقاط</div></div>
+          <div class="stat-card"><div class="num" id="st-stages">0 / 20</div><div class="lbl">المراحل المكتملة</div></div>
+          <div class="stat-card"><div class="num" id="st-correct">0</div><div class="lbl">إجابات صحيحة</div></div>
+          <div class="stat-card"><div class="num" id="st-accuracy">0%</div><div class="lbl">نسبة النجاح</div></div>
+          <div class="stat-card"><div class="num" style="font-size:1rem" id="st-best">—</div><div class="lbl">أعلى إنجاز</div></div>
+        </div>
+      </section>
+
+      <!-- ================= خريطة المراحل ================= -->
+      <section class="screen" id="screen-stages" aria-label="خريطة المراحل">
+        <div class="screen-header">
+          <button class="back-btn" data-nav="#/home">← الرئيسية</button>
+          <div class="grow">
+            <h2>🗺️ خريطة المراحل</h2>
+            <div class="sub">من تأسيس 1911 حتى الاختبار الأسطوري</div>
+          </div>
+        </div>
+        <div class="map-summary">
+          <span class="stars-count" id="map-stars">⭐ 0 / 60</span>
+          <div class="progress"><span id="map-bar" style="width:0%"></span></div>
+          <span class="muted" style="font-weight:800" id="map-completed">0 مكتملة</span>
+        </div>
+        <div class="stages-grid" id="stages-grid"><!-- تُبنى ديناميكيًا --></div>
+      </section>
+
+      <!-- ================= شاشة اللعب ================= -->
+      <section class="screen" id="screen-game" aria-label="شاشة اللعب">
+        <div class="game-hud">
+          <div>
+            <div class="g-stage" id="game-stage-title">المرحلة</div>
+            <div class="g-progress" id="game-q-progress">السؤال 1 من 8</div>
+          </div>
+          <div class="g-score">⚡ <span id="game-session-score">0</span></div>
+        </div>
+
+        <div class="q-progress"><span id="q-bar" style="width:0%"></span></div>
+
+        <div id="game-area"><!-- يديره محرك اللعبة --></div>
+      </section>
+
+      <!-- ================= الموسوعة ================= -->
+      <section class="screen" id="screen-encyclopedia" aria-label="موسوعة الزمالك">
+        <div class="screen-header">
+          <button class="back-btn" data-nav="#/home">← الرئيسية</button>
+          <div class="grow">
+            <h2>📚 موسوعة الزمالك</h2>
+            <div class="sub">تعلّم قبل أن تلعب — بطاقات موثقة من المصادر</div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="ency-search">🔍 ابحث في الموسوعة</label>
+          <input type="text" id="ency-search" placeholder="مثال: التأسيس، دوري الأبطال، شوبير، 1944...">
+        </div>
+
+        <div class="row wrap mb-2" id="ency-filters" role="tablist" aria-label="تصفية التصنيفات"><!-- شرائح التصنيف --></div>
+
+        <div class="stages-grid" id="ency-grid"><!-- بطاقات الموسوعة --></div>
+        <div class="load-error hidden" id="ency-empty">لا توجد نتائج مطابقة لبحثك 🤔 جرّب كلمة أخرى</div>
+      </section>
+
+      <!-- ================= الإنجازات ================= -->
+      <section class="screen" id="screen-achievements" aria-label="الإنجازات">
+        <div class="screen-header">
+          <button class="back-btn" data-nav="#/home">← الرئيسية</button>
+          <div class="grow">
+            <h2>🏅 إنجازاتي</h2>
+            <div class="sub">اجمع الشارات وارتقِ من مشجع جديد إلى أسطورة</div>
+          </div>
+        </div>
+
+        <div class="level-card mb-2">
+          <div class="lvl-head">
+            <div class="lvl-name">🎖️ <span id="ach-lvl-name">مشجع جديد</span></div>
+            <div class="next" id="ach-lvl-next"></div>
+          </div>
+          <div class="progress"><span id="ach-lvl-bar" style="width:0%"></span></div>
+        </div>
+
+        <div class="stages-grid" id="achievements-grid"><!-- شارات الإنجاز --></div>
+      </section>
+
+      <!-- ================= الإعدادات ================= -->
+      <section class="screen" id="screen-settings" aria-label="الإعدادات">
+        <div class="screen-header">
+          <button class="back-btn" data-nav="#/home">← الرئيسية</button>
+          <div class="grow">
+            <h2>⚙️ الإعدادات</h2>
+            <div class="sub">خصّص تجربتك</div>
+          </div>
+        </div>
+
+        <div class="card mb-2">
+          <div class="field">
+            <label for="input-name">✍️ اسم اللاعب</label>
+            <input type="text" id="input-name" maxlength="20" placeholder="اكتب اسمك هنا">
+          </div>
+          <button class="btn btn-primary" id="btn-save-name">حفظ الاسم</button>
+        </div>
+
+        <div class="card mb-2">
+          <div class="row" style="justify-content:space-between">
+            <div>
+              <b>🔊 المؤثرات الصوتية</b>
+              <div class="muted" style="font-size:.8rem;font-weight:600">أصوات الإجابات والاحتفالات</div>
+            </div>
+            <button class="btn btn-light" id="btn-toggle-sound">تشغيل</button>
+          </div>
+        </div>
+
+        <div class="card mb-2">
+          <div class="row" style="justify-content:space-between">
+            <div>
+              <b>🌙 الوضع الليلي</b>
+              <div class="muted" style="font-size:.8rem;font-weight:600">لعب مريح للعين في الظلام</div>
+            </div>
+            <button class="btn btn-light" id="btn-toggle-theme">إيقاف</button>
+          </div>
+        </div>
+
+        <div class="card mb-2" style="border-color:rgba(211,47,47,.4)">
+          <b style="color:var(--red)">⚠️ منطقة الخطر</b>
+          <div class="muted" style="font-size:.85rem;font-weight:600;margin:6px 0 12px">
+            إعادة ضبط التقدم تحذف النقاط والمراحل والنجوم والشارات نهائيًا.
+          </div>
+          <button class="btn" id="btn-reset" style="background:var(--red-dark);color:#fff">🗑️ إعادة ضبط التقدم</button>
+        </div>
+
+        <div class="card">
+          <b>🏹 عن اللعبة</b>
+          <p class="muted" style="font-size:.85rem;font-weight:600;line-height:2;margin-top:6px">
+            أسطورة الزمالك — تجربة تفاعلية لتعلّم تاريخ نادي الزمالك منذ تأسيسه عام 1911.
+            المعلومات التاريخية مستندة إلى المقال الرئيسي في ويكيبيديا العربية والمصادر الرياضية الموثوقة.
+            الأرقام الإحصائية (أعداد الألقاب وغيرها) مثبتة كما في المصادر في <b>نوفمبر 2026</b>، وقد تتغير مع المواسم الجديدة.
+            هذه لعبة جماهيرية غير رسمية وليست تابعة للنادي.
+          </p>
+        </div>
+      </section>
+
+    </main>
+
+    <div class="footer-note">
+      ZAMALEK LEGENDS • أسطورة الزمالك 🏹<br>
+      لعبة جماهيرية تعليمية غير رسمية — الأرقام وفق المصادر حتى نوفمبر 2026
+    </div>
+  </div>
+
+  <!-- نافذة اسم اللاعب (أول مرة) -->
+  <div class="modal-overlay" id="modal-name" role="dialog" aria-modal="true" aria-label="اسم اللاعب">
+    <div class="modal name-modal">
+      <img class="emblem-sm" src="./assets/icons/emblem.svg" alt="">
+      <h3 class="center">أهلًا بك في القلعة البيضاء!</h3>
+      <p class="center muted mb-2" style="font-size:.9rem;font-weight:600">
+        قبل أن تبدأ رحلتك من 1911 حتى تصبح أسطورة... ما اسمك أيها الزملكاوي؟
+      </p>
+      <div class="field">
+        <input type="text" id="name-first-input" maxlength="20" placeholder="اسمك أو لقبك">
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-primary" id="btn-name-first-save">ابدأ الرحلة 🏹</button>
+        <button class="btn btn-ghost" id="btn-name-first-skip">لاحقًا</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- نافذة تفاصيل المرحلة -->
+  <div class="modal-overlay" id="modal-stage" role="dialog" aria-modal="true" aria-label="تفاصيل المرحلة">
+    <div class="modal stage-modal" id="stage-modal-body"><!-- يُبنى ديناميكيًا --></div>
+  </div>
+
+  <!-- نافذة تأكيد إعادة الضبط -->
+  <div class="modal-overlay" id="modal-confirm" role="dialog" aria-modal="true" aria-label="تأكيد إعادة الضبط">
+    <div class="modal">
+      <h3>🗑️ إعادة ضبط التقدم؟</h3>
+      <p class="muted" style="font-weight:600;line-height:2">
+        سيتم حذف كل شيء نهائيًا: الاسم، النقاط، المراحل المكتملة، النجوم، والشارات.<br>
+        هل أنت متأكد من هذا القرار الصعب؟
+      </p>
+      <div class="modal-actions">
+        <button class="btn btn-primary" id="btn-confirm-reset" style="background:var(--red-dark)">نعم، احذف كل شيء</button>
+        <button class="btn btn-light" id="btn-cancel-reset">إلغاء</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- نافذة بطاقة الموسوعة -->
+  <div class="modal-overlay" id="modal-ency" role="dialog" aria-modal="true" aria-label="بطاقة موسوعة">
+    <div class="modal" id="ency-modal-body"><!-- يُبنى ديناميكيًا --></div>
+  </div>
+
+  <!-- نافذة شارة إنجاز جديدة -->
+  <div class="modal-overlay" id="modal-badge" role="dialog" aria-modal="true" aria-label="إنجاز جديد">
+    <div class="modal center" id="badge-modal-body"><!-- يُبنى ديناميكيًا --></div>
+  </div>
+
+  <div class="toast-wrap" id="toast-wrap" aria-live="polite"></div>
+
+  <!-- نقطة الدخول -->
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>
