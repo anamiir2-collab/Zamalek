@@ -29,7 +29,10 @@ export const STAGES_INDEX = [
   { id: 17, title: 'ليالي القمة',           subtitle: 'مباريات الزمالك والأهلي التاريخية',  icon: '🔥', difficulty: 'hard',   points: 140, theme: 'linear-gradient(135deg,#e57373,#8e0000)' },
   { id: 18, title: 'الأرقام القياسية',      subtitle: 'الهدافون والأكثر مشاركة',            icon: '📊', difficulty: 'hard',   points: 140, theme: 'linear-gradient(135deg,#a1887f,#4e342e)' },
   { id: 19, title: 'الرياضات الأخرى',       subtitle: 'اليد والسلة والطائرة وأكثر',         icon: '🏀', difficulty: 'easy',   points: 100, theme: 'linear-gradient(135deg,#fff176,#f9a825)' },
-  { id: 20, title: 'الاختبار الأسطوري',     subtitle: 'اختبار شامل في تاريخ الزمالك',       icon: '🎯', difficulty: 'legend', points: 160, theme: 'linear-gradient(135deg,#7e57c2,#311b92)' }
+  { id: 20, title: 'الاختبار الأسطوري',     subtitle: 'اختبار شامل في تاريخ الزمالك',       icon: '🎯', difficulty: 'legend', points: 160, theme: 'linear-gradient(135deg,#7e57c2,#311b92)' },
+  { id: 21, title: 'ملوك دوري أبطال إفريقيا', subtitle: 'رحلة الألقاب القارية الخمسة', icon: '🏆', difficulty: 'hard', points: 140, theme: 'linear-gradient(135deg,#f9a825,#ef6c00)' },
+  { id: 22, title: 'أبطال الكونفدرالية', subtitle: 'ليالي المجد في كأس الاتحاد الإفريقي', icon: '🌍', difficulty: 'hard', points: 140, theme: 'linear-gradient(135deg,#26a69a,#00695c)' },
+  { id: 23, title: 'كؤوس السوبر الإفريقي', subtitle: 'خمس محطات ذهبية في السوبر القاري', icon: '⭐', difficulty: 'hard', points: 140, theme: 'linear-gradient(135deg,#7e57c2,#4527a0)' }
 ];
 
 /** مسارات ملفات المراحل */
@@ -40,7 +43,8 @@ const REGISTRY = {
   10: './stages/stage-10.js', 11: './stages/stage-11.js', 12: './stages/stage-12.js',
   13: './stages/stage-13.js', 14: './stages/stage-14.js', 15: './stages/stage-15.js',
   16: './stages/stage-16.js', 17: './stages/stage-17.js', 18: './stages/stage-18.js',
-  19: './stages/stage-19.js', 20: './stages/stage-20.js'
+  19: './stages/stage-19.js', 20: './stages/stage-20.js',
+  21: './stages/stage-21.js', 22: './stages/stage-22.js', 23: './stages/stage-23.js'
 };
 
 /** مخزن مؤقت لتجنب التحميل المتكرر */
