@@ -47,7 +47,11 @@ export const STAGES_INDEX = [
   { id: 35, title: 'سلة الزمالك', subtitle: 'إنجازات كرة السلة وقواعد اللعبة', icon: '🏀', difficulty: 'medium', points: 120, theme: 'linear-gradient(135deg,#fff176,#f9a825)' },
   { id: 36, title: 'يد الزمالك', subtitle: 'كرة اليد وقواعدها وإنجازات الفريق', icon: '🤾', difficulty: 'medium', points: 120, theme: 'linear-gradient(135deg,#4db6ac,#00695c)' },
   { id: 37, title: 'طائرة الزمالك', subtitle: 'كرة الطائرة ومهاراتها وقواعدها', icon: '🏐', difficulty: 'easy', points: 100, theme: 'linear-gradient(135deg,#81d4fa,#0277bd)' },
-  { id: 38, title: 'قواعد كرة القدم', subtitle: 'قوانين اللعبة التي يخوض بها الزمالك مبارياته', icon: '⚽', difficulty: 'easy', points: 100, theme: 'linear-gradient(135deg,#a5d6a7,#2e7d32)' }
+  { id: 38, title: 'قواعد كرة القدم', subtitle: 'قوانين اللعبة التي يخوض بها الزمالك مبارياته', icon: '⚽', difficulty: 'easy', points: 100, theme: 'linear-gradient(135deg,#a5d6a7,#2e7d32)' },
+  { id: 39, title: 'محطات زملكاوية حديثة', subtitle: 'سنوات ونتائج صنعت حضور الزمالك', icon: '🏆', difficulty: 'medium', points: 120, theme: 'linear-gradient(135deg,#ffb74d,#e65100)' },
+  { id: 40, title: 'مراكز لاعبي الزمالك', subtitle: 'أدوار اللاعبين ومهامهم داخل الملعب', icon: '⚽', difficulty: 'easy', points: 100, theme: 'linear-gradient(135deg,#a5d6a7,#2e7d32)' },
+  { id: 41, title: 'بطولات إفريقيا وقوانينها', subtitle: 'مسابقات الأندية الإفريقية وأنظمتها', icon: '🌍', difficulty: 'hard', points: 140, theme: 'linear-gradient(135deg,#4fc3f7,#01579b)' },
+  { id: 42, title: 'الزمالك والمنتخبات', subtitle: 'لاعبون ومدربون ارتبطوا بالمنتخبات', icon: '🇪🇬', difficulty: 'medium', points: 120, theme: 'linear-gradient(135deg,#4db6ac,#00695c)' }
 ];
 
 /** مسارات ملفات المراحل */
@@ -65,7 +69,8 @@ const REGISTRY = {
   30: './stages/stage-30.js', 31: './stages/stage-31.js',
   32: './stages/stage-32.js', 33: './stages/stage-33.js', 34: './stages/stage-34.js',
   35: './stages/stage-35.js', 36: './stages/stage-36.js', 37: './stages/stage-37.js',
-  38: './stages/stage-38.js'
+  38: './stages/stage-38.js', 39: './stages/stage-39.js', 40: './stages/stage-40.js',
+  41: './stages/stage-41.js', 42: './stages/stage-42.js'
 };
 
 /** مخزن مؤقت لتجنب التحميل المتكرر */
