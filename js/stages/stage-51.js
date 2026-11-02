@@ -1,0 +1,1 @@
+const stage={id:51,title:"المنافسات المحلية",description:"معلومات عن مسابقات الكرة المصرية",difficulty:"medium",points:120,questions:[]}; export default stage;
