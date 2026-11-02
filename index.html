@@ -3,18 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="أسطورة الزمالك — لعبة تفاعلية لاستكشاف تاريخ نادي الزمالك من التأسيس عام 1911 حتى العصر الحديث، مع 20 مرحلة وموسوعة تاريخية">
+  <meta name="description" content="Zamalek Legends — عالم كرتوني ممتع لتعلم تاريخ نادي الزمالك: أقسام ومراحل وشخصيات لطيفة ومكافآت للأطفال وجميع الأعمار">
   <meta name="theme-color" content="#d32f2f">
-  <title>أسطورة الزمالك | ZAMALEK LEGENDS</title>
+  <title>Zamalek Legends | أسطورة الزمالك 🎀</title>
   <link rel="icon" type="image/png" href="./assets/icons/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500;600;700;800&family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/main.css">
   <link rel="stylesheet" href="./css/home.css">
   <link rel="stylesheet" href="./css/stages.css">
   <link rel="stylesheet" href="./css/game.css">
   <link rel="stylesheet" href="./css/animations.css">
+  <link rel="stylesheet" href="./css/sections.css">
 </head>
 <body>
   <div class="app">
@@ -22,14 +23,14 @@
     <!-- الشريط العلوي -->
     <header class="topbar" aria-label="الشريط العلوي">
       <div class="brand">
-        <img src="./assets/icons/emblem.png" alt="شعار أسطورة الزمالك" width="38">
+        <img src="./assets/icons/emblem.png" alt="شعار Zamalek Legends" width="38">
         <div>
-          أسطورة الزمالك
-          <small>التاريخ يُحكى... والأساطير لا تُنسى</small>
+          Zamalek Legends
+          <small>عالم المرح والتعلم في القلعة البيضاء</small>
         </div>
       </div>
       <div class="topbar-actions">
-        <span class="points-chip" id="hud-points" title="نقاطك">⚡ <b id="hud-points-num">0</b></span>
+        <span class="points-chip" id="hud-points" title="نقاط خبرتك">⚡ <b id="hud-points-num">0</b></span>
         <button class="icon-btn" id="btn-sound" title="الصوت" aria-label="تشغيل أو إيقاف الصوت">🔊</button>
         <button class="icon-btn" id="btn-theme" title="الوضع الليلي" aria-label="تبديل الوضع الليلي">🌙</button>
       </div>
@@ -37,39 +38,21 @@
 
     <main style="flex:1">
 
-      <!-- ================= الشاشة الرئيسية ================= -->
-      <section class="screen" id="screen-home" aria-label="الشاشة الرئيسية">
+      <!-- ================= عالم الأقسام (الرئيسية) ================= -->
+      <section class="screen" id="screen-home" aria-label="عالم الأقسام">
         <div class="hero">
-          <img class="emblem" src="./assets/icons/emblem.png" alt="درع أسطورة الزمالك">
-          <h1 class="game-title">أسطورة الزمالك</h1>
-          <p class="tagline">🏹 التاريخ يُحكى... والأساطير لا تُنسى</p>
-          <p class="welcome">أهلًا بك <b id="welcome-name">زملكاوي</b> — رحلتك من 1911 إلى الأسطورة تبدأ من هنا ⚪🔴</p>
+          <img class="emblem" src="./assets/icons/emblem.png" alt="درع Zamalek Legends">
+          <h1 class="game-title">Zamalek Legends</h1>
+          <p class="tagline">🎀 العالم الكرتوني الممتع لنادي الزمالك</p>
+          <p class="welcome">أهلًا بك <b id="welcome-name">يا بطل</b> — الأقسام العشرة مستنيةك! ⚪🔴</p>
+          <button class="btn btn-primary btn-big" id="btn-resume" hidden>
+            ⏳ استكمال من حيث توقفت
+            <small id="resume-info" style="display:block;font-weight:700;font-size:.8rem"></small>
+          </button>
         </div>
 
-        <div class="menu-grid" role="navigation" aria-label="القائمة الرئيسية">
-          <button class="menu-btn start" id="btn-start-adventure">
-            <span class="mi">🏹</span> ابدأ المغامرة
-          </button>
-          <button class="menu-btn resume" id="btn-resume" hidden>
-            <span class="mi">⏳</span>
-            <span class="grow">
-              استكمال اللعب
-              <small class="muted" style="display:block;font-weight:600" id="resume-info">أنت في المرحلة...</small>
-            </span>
-          </button>
-          <button class="menu-btn" id="btn-go-stages">
-            <span class="mi">🗺️</span> خريطة المراحل
-          </button>
-          <button class="menu-btn" id="btn-go-achievements">
-            <span class="mi">🏅</span> إنجازاتي
-          </button>
-          <button class="menu-btn" id="btn-go-encyclopedia">
-            <span class="mi">📚</span> موسوعة الزمالك
-          </button>
-          <button class="menu-btn" id="btn-go-settings">
-            <span class="mi">⚙️</span> الإعدادات
-          </button>
-        </div>
+        <h2 class="section-title">🌍 اختر قسمك المفضل</h2>
+        <div class="sections-grid" id="sections-grid" role="navigation" aria-label="أقسام اللعبة"><!-- تُبنى ديناميكيًا --></div>
 
         <div class="level-card">
           <div class="lvl-head">
@@ -81,30 +64,55 @@
           </div>
         </div>
 
+        <div class="menu-grid" role="navigation" aria-label="القائمة الرئيسية">
+          <button class="menu-btn gold" id="btn-go-prizes">
+            <span class="mi">🏅</span> جوائزي وأوسمتي
+          </button>
+          <button class="menu-btn" id="btn-go-profile">
+            <span class="mi">👤</span> ملفي
+          </button>
+          <button class="menu-btn" id="btn-go-favorites">
+            <span class="mi">❤️</span> المفضلة
+          </button>
+          <button class="menu-btn" id="btn-go-encyclopedia">
+            <span class="mi">📚</span> موسوعة الزمالك
+          </button>
+          <button class="menu-btn" id="btn-go-help">
+            <span class="mi">❓</span> مساعدة
+          </button>
+          <button class="menu-btn" id="btn-go-settings">
+            <span class="mi">⚙️</span> الإعدادات
+          </button>
+        </div>
+
         <div class="stats-grid" aria-label="إحصائيات اللاعب">
-          <div class="stat-card"><div class="num" id="st-points">0</div><div class="lbl">إجمالي النقاط</div></div>
-          <div class="stat-card"><div class="num" id="st-stages">0 / 20</div><div class="lbl">المراحل المكتملة</div></div>
+          <div class="stat-card"><div class="num" id="st-points">0</div><div class="lbl">نقاط الخبرة</div></div>
+          <div class="stat-card"><div class="num" id="st-stages">0 / 0</div><div class="lbl">مراحل مكتملة</div></div>
+          <div class="stat-card"><div class="num" id="st-stars">⭐ 0</div><div class="lbl">نجومي</div></div>
           <div class="stat-card"><div class="num" id="st-correct">0</div><div class="lbl">إجابات صحيحة</div></div>
           <div class="stat-card"><div class="num" id="st-accuracy">0%</div><div class="lbl">نسبة النجاح</div></div>
-          <div class="stat-card"><div class="num" style="font-size:1rem" id="st-best">—</div><div class="lbl">أعلى إنجاز</div></div>
         </div>
       </section>
 
-      <!-- ================= خريطة المراحل ================= -->
-      <section class="screen" id="screen-stages" aria-label="خريطة المراحل">
+      <!-- ================= صفحة القسم ومراحله ================= -->
+      <section class="screen" id="screen-section" aria-label="مراحل القسم">
         <div class="screen-header">
-          <button class="back-btn" data-nav="#/home">← الرئيسية</button>
+          <button class="back-btn" data-nav="#/home">← الأقسام</button>
           <div class="grow">
-            <h2>🗺️ خريطة المراحل</h2>
-            <div class="sub">من تأسيس 1911 حتى الاختبار الأسطوري</div>
+            <h2 id="sec-title">القسم</h2>
+            <div class="sub" id="sec-desc"></div>
           </div>
         </div>
+
+        <div class="char-bubble wide" id="sec-greet"><!-- ترحيب الشخصية --></div>
+
         <div class="map-summary">
-          <span class="stars-count" id="map-stars">⭐ 0 / 60</span>
-          <div class="progress"><span id="map-bar" style="width:0%"></span></div>
-          <span class="muted" style="font-weight:800" id="map-completed">0 مكتملة</span>
+          <span class="stars-count" id="sec-stars">⭐ 0 / 0</span>
+          <div class="progress"><span id="sec-bar" style="width:0%"></span></div>
+          <span class="muted" style="font-weight:800" id="sec-completed">0 مكتملة</span>
         </div>
-        <div class="stages-grid" id="stages-grid"><!-- تُبنى ديناميكيًا --></div>
+
+        <div class="stages-grid" id="sec-grid"><!-- بطاقات مراحل القسم --></div>
       </section>
 
       <!-- ================= شاشة اللعب ================= -->
@@ -112,7 +120,7 @@
         <div class="game-hud">
           <div>
             <div class="g-stage" id="game-stage-title">المرحلة</div>
-            <div class="g-progress" id="game-q-progress">السؤال 1 من 8</div>
+            <div class="g-progress" id="game-q-progress">السؤال 1 من 20</div>
           </div>
           <div class="g-score">⚡ <span id="game-session-score">0</span></div>
         </div>
@@ -125,7 +133,7 @@
       <!-- ================= الموسوعة ================= -->
       <section class="screen" id="screen-encyclopedia" aria-label="موسوعة الزمالك">
         <div class="screen-header">
-          <button class="back-btn" data-nav="#/home">← الرئيسية</button>
+          <button class="back-btn" data-nav="#/home">← الأقسام</button>
           <div class="grow">
             <h2>📚 موسوعة الزمالك</h2>
             <div class="sub">تعلّم قبل أن تلعب — بطاقات موثقة من المصادر</div>
@@ -143,14 +151,21 @@
         <div class="load-error hidden" id="ency-empty">لا توجد نتائج مطابقة لبحثك 🤔 جرّب كلمة أخرى</div>
       </section>
 
-      <!-- ================= الإنجازات ================= -->
-      <section class="screen" id="screen-achievements" aria-label="الإنجازات">
+      <!-- ================= الجوائز والأوسمة ================= -->
+      <section class="screen" id="screen-prizes" aria-label="الجوائز والأوسمة">
         <div class="screen-header">
-          <button class="back-btn" data-nav="#/home">← الرئيسية</button>
+          <button class="back-btn" data-nav="#/home">← الأقسام</button>
           <div class="grow">
-            <h2>🏅 إنجازاتي</h2>
-            <div class="sub">اجمع الشارات وارتقِ من مشجع جديد إلى أسطورة</div>
+            <h2>🏅 جوائزي وأوسمتي</h2>
+            <div class="sub">نجومك وميدالياتك وشاراتك كلها هنا</div>
           </div>
+        </div>
+
+        <div class="prize-counters" aria-label="ملخص الجوائز">
+          <div class="prize-chip">⭐ <b id="pr-stars">0</b><span>نجمة</span></div>
+          <div class="prize-chip">🎖️ <b id="pr-medals">0/10</b><span>وسام</span></div>
+          <div class="prize-chip">🏅 <b id="pr-badges">0</b><span>شارة</span></div>
+          <div class="prize-chip">🎁 <b id="pr-boxes">0</b><span>صندوق</span></div>
         </div>
 
         <div class="level-card mb-2">
@@ -161,13 +176,119 @@
           <div class="progress"><span id="ach-lvl-bar" style="width:0%"></span></div>
         </div>
 
-        <div class="stages-grid" id="achievements-grid"><!-- شارات الإنجاز --></div>
+        <h3 class="section-title small">🎖️ أوسمة الأقسام — أكمل كل مراحل القسم لتحصل على وسامه</h3>
+        <div class="stages-grid" id="prizes-medals"><!-- أوسمة الأقسام --></div>
+
+        <h3 class="section-title small">🏅 شارات الإنجاز</h3>
+        <div class="stages-grid" id="prizes-badges"><!-- شارات الإنجاز --></div>
+      </section>
+
+      <!-- ================= ملف اللاعب ================= -->
+      <section class="screen" id="screen-profile" aria-label="ملف اللاعب">
+        <div class="screen-header">
+          <button class="back-btn" data-nav="#/home">← الأقسام</button>
+          <div class="grow">
+            <h2>👤 ملفي</h2>
+            <div class="sub">بطاقة البطل الخاصة بك</div>
+          </div>
+        </div>
+
+        <div class="profile-card">
+          <div class="profile-avatar" id="profile-avatar"><!-- رسم الشخصية --></div>
+          <div class="profile-info">
+            <h3 id="profile-name">زملكاوي مجهول</h3>
+            <div class="profile-lvl" id="profile-lvl">🎫 مشجع جديد</div>
+            <div class="profile-char" id="profile-char">رفيقك: —</div>
+          </div>
+        </div>
+
+        <div class="card mb-2">
+          <div class="field">
+            <label for="input-name">✍️ لقبك في اللعبة (اختياري)</label>
+            <input type="text" id="input-name" maxlength="20" placeholder="مثال: بطل القلعة">
+          </div>
+          <button class="btn btn-primary" id="btn-save-name">حفظ اللقب</button>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card"><div class="num" id="pf-points">0</div><div class="lbl">نقاط الخبرة</div></div>
+          <div class="stat-card"><div class="num" id="pf-stages">0</div><div class="lbl">مراحل مكتملة</div></div>
+          <div class="stat-card"><div class="num" id="pf-stars">⭐ 0</div><div class="lbl">نجوم</div></div>
+          <div class="stat-card"><div class="num" id="pf-medals">🎖️ 0</div><div class="lbl">أوسمة</div></div>
+          <div class="stat-card"><div class="num" id="pf-badges">🏅 0</div><div class="lbl">شارات</div></div>
+          <div class="stat-card"><div class="num" id="pf-accuracy">0%</div><div class="lbl">نسبة النجاح</div></div>
+        </div>
+
+        <h3 class="section-title small">🎭 غيّر رفيقك في المغامرة</h3>
+        <div class="char-select-grid" id="profile-char-grid"><!-- اختيار الشخصية --></div>
+      </section>
+
+      <!-- ================= المفضلة ================= -->
+      <section class="screen" id="screen-favorites" aria-label="صفحة المفضلة">
+        <div class="screen-header">
+          <button class="back-btn" data-nav="#/home">← الأقسام</button>
+          <div class="grow">
+            <h2>❤️ المفضلة</h2>
+            <div class="sub">المعلومات الجميلة التي حفظتها أثناء اللعب</div>
+          </div>
+        </div>
+        <div class="fav-list" id="fav-list"><!-- عناصر المفضلة --></div>
+        <div class="load-error hidden" id="fav-empty">
+          لم تحفظ أي معلومة بعد 💡<br>
+          أثناء اللعب اضغط زر 🤍 بجانب أي معلومة لتظهر هنا!
+        </div>
+      </section>
+
+      <!-- ================= المساعدة ================= -->
+      <section class="screen" id="screen-help" aria-label="مساعدة ومعلومات">
+        <div class="screen-header">
+          <button class="back-btn" data-nav="#/home">← الأقسام</button>
+          <div class="grow">
+            <h2>❓ كيف ألعب؟</h2>
+            <div class="sub">دليل صغير وبسيط لعالم Zamalek Legends</div>
+          </div>
+        </div>
+
+        <div class="card mb-2">
+          <b>🚀 خطوات اللعب</b>
+          <ol class="help-steps">
+            <li>اختر رفيقك الكرتوني من الشاشة الأولى (أو تخطَّ وابدأ فورًا).</li>
+            <li>من الصفحة الرئيسية اختر القسم الذي يعجبك: تاريخ، كرة قدم، نجوم، بطولات وأكثر!</li>
+            <li>داخل كل قسم مراحل مرتبة — أول مرحلة مفتوحة دائمًا، وكل مرحلة جديدة تُفتح بإكمال ما قبلها.</li>
+            <li>كل مرحلة فيها 20 سؤالًا ممتعًا بأنواع مختلفة: اختيار، صح وخطأ، صور، توصيل، ترتيب وتحديات سرعة.</li>
+            <li>لو احترت اضغط زر 💡 التلميح — المعلومة بسيطة ومساعدة لطيفة مستنيةك.</li>
+            <li>بعد كل مرحلة: نجوم ونقاط خبرة وصندوق مفاجآت 🎁، ولو أكملت قسمًا كاملًا تحصل على وسامه 🎖️.</li>
+          </ol>
+        </div>
+
+        <div class="card mb-2">
+          <b>🎭 أصدقاؤك في اللعبة</b>
+          <div class="char-select-grid" id="help-chars"></div>
+        </div>
+
+        <div class="card mb-2">
+          <b>🤍 ملاحظة للعائلة</b>
+          <p class="muted" style="font-size:.85rem;font-weight:600;line-height:2;margin-top:6px">
+            هذه اللعبة آمنة للأطفال: لا تجمع أي بيانات شخصية، ولا تحتوي إعلانات أو محادثات مع الغرباء.
+            كل تقدم اللاعب محفوظ على جهازه فقط (LocalStorage)، ولقب اللاعب اختياري تمامًا.
+            المعلومات التاريخية موثقة من مصادر موثوقة مع شرح قصير بعد كل إجابة ليتعلم الطفل أثناء اللعب.
+          </p>
+        </div>
+
+        <div class="card">
+          <b>🎀 عن اللعبة</b>
+          <p class="muted" style="font-size:.85rem;font-weight:600;line-height:2;margin-top:6px">
+            Zamalek Legends تجربة تفاعلية تعليمية وترفيهية عن نادي الزمالك منذ تأسيسه عام 1911.
+            عشرة أقسام ومراحل كثيرة بأسئلة موثقة، وشخصيات كرتونية أصلية، ومؤثرات لطيفة.
+            لعبة جماهيرية غير رسمية وليست تابعة للنادي.
+          </p>
+        </div>
       </section>
 
       <!-- ================= الإعدادات ================= -->
       <section class="screen" id="screen-settings" aria-label="الإعدادات">
         <div class="screen-header">
-          <button class="back-btn" data-nav="#/home">← الرئيسية</button>
+          <button class="back-btn" data-nav="#/home">← الأقسام</button>
           <div class="grow">
             <h2>⚙️ الإعدادات</h2>
             <div class="sub">خصّص تجربتك</div>
@@ -175,11 +296,8 @@
         </div>
 
         <div class="card mb-2">
-          <div class="field">
-            <label for="input-name">✍️ اسم اللاعب</label>
-            <input type="text" id="input-name" maxlength="20" placeholder="اكتب اسمك هنا">
-          </div>
-          <button class="btn btn-primary" id="btn-save-name">حفظ الاسم</button>
+          <b>🎭 رفيقك في اللعبة</b>
+          <div class="char-select-grid" id="settings-char-grid"></div>
         </div>
 
         <div class="card mb-2">
@@ -205,44 +323,31 @@
         <div class="card mb-2" style="border-color:rgba(211,47,47,.4)">
           <b style="color:var(--red)">⚠️ منطقة الخطر</b>
           <div class="muted" style="font-size:.85rem;font-weight:600;margin:6px 0 12px">
-            إعادة ضبط التقدم تحذف النقاط والمراحل والنجوم والشارات نهائيًا.
+            إعادة ضبط التقدم تحذف النقاط والمراحل والنجوم والأوسمة والشارات والمفضلة نهائيًا.
           </div>
           <button class="btn" id="btn-reset" style="background:var(--red-dark);color:#fff">🗑️ إعادة ضبط التقدم</button>
-        </div>
-
-        <div class="card">
-          <b>🏹 عن اللعبة</b>
-          <p class="muted" style="font-size:.85rem;font-weight:600;line-height:2;margin-top:6px">
-            أسطورة الزمالك — تجربة تفاعلية لتعلّم تاريخ نادي الزمالك منذ تأسيسه عام 1911.
-            المعلومات التاريخية مستندة إلى المقال الرئيسي في ويكيبيديا العربية والمصادر الرياضية الموثوقة.
-            الأرقام الإحصائية (أعداد الألقاب وغيرها) مثبتة كما في المصادر في <b>نوفمبر 2026</b>، وقد تتغير مع المواسم الجديدة.
-            هذه لعبة جماهيرية غير رسمية وليست تابعة للنادي.
-          </p>
         </div>
       </section>
 
     </main>
 
     <div class="footer-note">
-      ZAMALEK LEGENDS • أسطورة الزمالك 🏹<br>
-      لعبة جماهيرية تعليمية غير رسمية — الأرقام وفق المصادر حتى نوفمبر 2026
+      ZAMALEK LEGENDS • أسطورة الزمالك 🎀<br>
+      عالم كرتوني تعليمي غير رسمي — الأرقام وفق المصادر حتى نوفمبر 2026
     </div>
   </div>
 
-  <!-- نافذة اسم اللاعب (أول مرة) -->
-  <div class="modal-overlay" id="modal-name" role="dialog" aria-modal="true" aria-label="اسم اللاعب">
-    <div class="modal name-modal">
-      <img class="emblem-sm" src="./assets/icons/emblem.png" alt="">
-      <h3 class="center">أهلًا بك في القلعة البيضاء!</h3>
-      <p class="center muted mb-2" style="font-size:.9rem;font-weight:600">
-        قبل أن تبدأ رحلتك من 1911 حتى تصبح أسطورة... ما اسمك أيها الزملكاوي؟
-      </p>
-      <div class="field">
-        <input type="text" id="name-first-input" maxlength="20" placeholder="اسمك أو لقبك">
-      </div>
-      <div class="modal-actions">
-        <button class="btn btn-primary" id="btn-name-first-save">ابدأ الرحلة 🏹</button>
-        <button class="btn btn-ghost" id="btn-name-first-skip">لاحقًا</button>
+  <!-- ================= شاشة الافتتاح + اختيار الشخصية ================= -->
+  <div class="splash" id="splash" role="dialog" aria-modal="true" aria-label="شاشة الترحيب">
+    <div class="splash-inner">
+      <img class="splash-emblem" src="./assets/icons/emblem.png" alt="درع Zamalek Legends">
+      <h1 class="splash-title">Zamalek Legends</h1>
+      <p class="splash-sub">يلا ندخل عالم القلعة البيضاء! 🎉</p>
+
+      <div id="splash-step1">
+        <p class="splash-q">اختار رفيقك في المغامرة:</p>
+        <div class="char-select-grid" id="splash-chars"></div>
+        <button class="btn btn-ghost" id="btn-skip-char">تخطي الاختيار والبدء ←</button>
       </div>
     </div>
   </div>
@@ -257,7 +362,7 @@
     <div class="modal">
       <h3>🗑️ إعادة ضبط التقدم؟</h3>
       <p class="muted" style="font-weight:600;line-height:2">
-        سيتم حذف كل شيء نهائيًا: الاسم، النقاط، المراحل المكتملة، النجوم، والشارات.<br>
+        سيتم حذف كل شيء نهائيًا: اللقب، النقاط، المراحل المكتملة، النجوم، الأوسمة، الشارات والمفضلة.<br>
         هل أنت متأكد من هذا القرار الصعب؟
       </p>
       <div class="modal-actions">
@@ -272,9 +377,14 @@
     <div class="modal" id="ency-modal-body"><!-- يُبنى ديناميكيًا --></div>
   </div>
 
-  <!-- نافذة شارة إنجاز جديدة -->
+  <!-- نافذة شارة/وسام جديد -->
   <div class="modal-overlay" id="modal-badge" role="dialog" aria-modal="true" aria-label="إنجاز جديد">
     <div class="modal center" id="badge-modal-body"><!-- يُبنى ديناميكيًا --></div>
+  </div>
+
+  <!-- نافذة صندوق المفاجآت -->
+  <div class="modal-overlay" id="modal-box" role="dialog" aria-modal="true" aria-label="صندوق مفاجآت">
+    <div class="modal center" id="box-modal-body"><!-- يُبنى ديناميكيًا --></div>
   </div>
 
   <div class="toast-wrap" id="toast-wrap" aria-live="polite"></div>
