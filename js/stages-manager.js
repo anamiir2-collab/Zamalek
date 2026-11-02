@@ -104,7 +104,11 @@ const REGISTRY = {
   49: './stages/stage-49.js', 50: './stages/stage-50.js',
   51: './stages/stage-51.js', 52: './stages/stage-52.js', 53: './stages/stage-53.js',
   54: './stages/stage-54.js', 55: './stages/stage-55.js', 56: './stages/stage-56.js',
-  57: './stages/stage-57.js', 58: './stages/stage-58.js'
+  57: './stages/stage-57.js', 58: './stages/stage-58.js', 59: './stages/stage-59.js',
+  60: './stages/stage-60.js', 61: './stages/stage-61.js', 62: './stages/stage-62.js',
+  63: './stages/stage-63.js', 64: './stages/stage-64.js', 65: './stages/stage-65.js',
+  66: './stages/stage-66.js', 67: './stages/stage-67.js', 68: './stages/stage-68.js',
+  69: './stages/stage-69.js', 70: './stages/stage-70.js'
 };
 
 /** مخزن مؤقت لتجنب التحميل المتكرر */
