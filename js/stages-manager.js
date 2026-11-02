@@ -63,7 +63,11 @@ export const STAGES_INDEX = [
   { id: 51, title: 'المنافسات المحلية المصرية', subtitle: 'الدوري والكأس والسوبر المصري', icon: '🏆', difficulty: 'medium', points: 120, theme: 'linear-gradient(135deg,#ffb74d,#e65100)' },
   { id: 52, title: 'المسابقات القارية للأندية', subtitle: 'بطولات إفريقيا ومراحلها', icon: '🌍', difficulty: 'hard', points: 140, theme: 'linear-gradient(135deg,#4fc3f7,#01579b)' },
   { id: 53, title: 'خطط كرة القدم', subtitle: 'مبادئ تكتيكية لفهم طريقة اللعب', icon: '🧠', difficulty: 'medium', points: 120, theme: 'linear-gradient(135deg,#9575cd,#4527a0)' },
-  { id: 54, title: 'قراءة أرقام المباراة', subtitle: 'إحصائيات كرة القدم وكيفية فهمها', icon: '📊', difficulty: 'medium', points: 120, theme: 'linear-gradient(135deg,#a1887f,#4e342e)' }
+  { id: 54, title: 'قراءة أرقام المباراة', subtitle: 'إحصائيات كرة القدم وكيفية فهمها', icon: '📊', difficulty: 'medium', points: 120, theme: 'linear-gradient(135deg,#a1887f,#4e342e)' },
+  { id: 55, title: 'بطولات المنتخبات الإفريقية', subtitle: 'تاريخ كأس الأمم الإفريقية ونظامها', icon: '🇪🇬', difficulty: 'medium', points: 120, theme: 'linear-gradient(135deg,#4db6ac,#00695c)' },
+  { id: 56, title: 'قوانين التحكيم', subtitle: 'الحكام والبطاقات والقرارات', icon: '🟨', difficulty: 'medium', points: 120, theme: 'linear-gradient(135deg,#ffca28,#f57f17)' },
+  { id: 57, title: 'إدارة الفريق والموسم', subtitle: 'الجهاز الفني والإداري داخل الفريق', icon: '🧠', difficulty: 'medium', points: 120, theme: 'linear-gradient(135deg,#9575cd,#4527a0)' },
+  { id: 58, title: 'الزمالك عبر الأجيال', subtitle: 'أسماء وأدوار وحقب في تاريخ الفريق', icon: '🌟', difficulty: 'medium', points: 120, theme: 'linear-gradient(135deg,#f06292,#ad1457)' }
 ];
 
 /** مسارات ملفات المراحل */
@@ -87,7 +91,8 @@ const REGISTRY = {
   46: './stages/stage-46.js', 47: './stages/stage-47.js', 48: './stages/stage-48.js',
   49: './stages/stage-49.js', 50: './stages/stage-50.js',
   51: './stages/stage-51.js', 52: './stages/stage-52.js', 53: './stages/stage-53.js',
-  54: './stages/stage-54.js'
+  54: './stages/stage-54.js', 55: './stages/stage-55.js', 56: './stages/stage-56.js',
+  57: './stages/stage-57.js', 58: './stages/stage-58.js'
 };
 
 /** مخزن مؤقت لتجنب التحميل المتكرر */
