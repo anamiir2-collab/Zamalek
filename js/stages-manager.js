@@ -55,7 +55,11 @@ export const STAGES_INDEX = [
   { id: 43, title: 'ثنائية الزمالك 2015', subtitle: 'موسم جمع فيه الزمالك بين الدوري والكأس', icon: '🏆', difficulty: 'medium', points: 120, theme: 'linear-gradient(135deg,#ffb74d,#e65100)' },
   { id: 44, title: 'نهائي القرن الإفريقي', subtitle: 'مواجهة الزمالك والأهلي في نهائي 2020', icon: '🔥', difficulty: 'hard', points: 140, theme: 'linear-gradient(135deg,#e57373,#8e0000)' },
   { id: 45, title: 'مشوار الكونفدرالية 2024', subtitle: 'محطات الزمالك في طريق اللقب القاري الثاني', icon: '🌍', difficulty: 'hard', points: 140, theme: 'linear-gradient(135deg,#26a69a,#00695c)' },
-  { id: 46, title: 'الرياضة داخل نادي الزمالك', subtitle: 'التنوع الرياضي والألعاب الجماعية بالنادي', icon: '🏅', difficulty: 'medium', points: 120, theme: 'linear-gradient(135deg,#fff176,#f9a825)' }
+  { id: 46, title: 'الرياضة داخل نادي الزمالك', subtitle: 'التنوع الرياضي والألعاب الجماعية بالنادي', icon: '🏅', difficulty: 'medium', points: 120, theme: 'linear-gradient(135deg,#fff176,#f9a825)' },
+  { id: 47, title: 'مصطلحات كروية', subtitle: 'مصطلحات تكتيكية وتحكيمية في كرة القدم', icon: '📘', difficulty: 'medium', points: 120, theme: 'linear-gradient(135deg,#90caf9,#1565c0)' },
+  { id: 48, title: 'مدن الكرة الإفريقية', subtitle: 'مدن وأماكن أندية واجهها الزمالك', icon: '🌍', difficulty: 'medium', points: 120, theme: 'linear-gradient(135deg,#26a69a,#00695c)' },
+  { id: 49, title: 'تاريخ كرة القدم المصرية', subtitle: 'البطولات والاتحاد والمنتخبات المصرية', icon: '🇪🇬', difficulty: 'medium', points: 120, theme: 'linear-gradient(135deg,#4db6ac,#00695c)' },
+  { id: 50, title: 'اختبار الزمالك الشامل', subtitle: 'مراجعة متنوعة في تاريخ النادي وألعابه', icon: '🎯', difficulty: 'medium', points: 120, theme: 'linear-gradient(135deg,#7e57c2,#311b92)' }
 ];
 
 /** مسارات ملفات المراحل */
@@ -76,7 +80,8 @@ const REGISTRY = {
   38: './stages/stage-38.js', 39: './stages/stage-39.js', 40: './stages/stage-40.js',
   41: './stages/stage-41.js', 42: './stages/stage-42.js',
   43: './stages/stage-43.js', 44: './stages/stage-44.js', 45: './stages/stage-45.js',
-  46: './stages/stage-46.js'
+  46: './stages/stage-46.js', 47: './stages/stage-47.js', 48: './stages/stage-48.js',
+  49: './stages/stage-49.js', 50: './stages/stage-50.js'
 };
 
 /** مخزن مؤقت لتجنب التحميل المتكرر */
