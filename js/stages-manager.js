@@ -59,7 +59,11 @@ export const STAGES_INDEX = [
   { id: 47, title: 'مصطلحات كروية', subtitle: 'مصطلحات تكتيكية وتحكيمية في كرة القدم', icon: '📘', difficulty: 'medium', points: 120, theme: 'linear-gradient(135deg,#90caf9,#1565c0)' },
   { id: 48, title: 'مدن الكرة الإفريقية', subtitle: 'مدن وأماكن أندية واجهها الزمالك', icon: '🌍', difficulty: 'medium', points: 120, theme: 'linear-gradient(135deg,#26a69a,#00695c)' },
   { id: 49, title: 'تاريخ كرة القدم المصرية', subtitle: 'البطولات والاتحاد والمنتخبات المصرية', icon: '🇪🇬', difficulty: 'medium', points: 120, theme: 'linear-gradient(135deg,#4db6ac,#00695c)' },
-  { id: 50, title: 'اختبار الزمالك الشامل', subtitle: 'مراجعة متنوعة في تاريخ النادي وألعابه', icon: '🎯', difficulty: 'medium', points: 120, theme: 'linear-gradient(135deg,#7e57c2,#311b92)' }
+  { id: 50, title: 'اختبار الزمالك الشامل', subtitle: 'مراجعة متنوعة في تاريخ النادي وألعابه', icon: '🎯', difficulty: 'medium', points: 120, theme: 'linear-gradient(135deg,#7e57c2,#311b92)' },
+  { id: 51, title: 'المنافسات المحلية المصرية', subtitle: 'الدوري والكأس والسوبر المصري', icon: '🏆', difficulty: 'medium', points: 120, theme: 'linear-gradient(135deg,#ffb74d,#e65100)' },
+  { id: 52, title: 'المسابقات القارية للأندية', subtitle: 'بطولات إفريقيا ومراحلها', icon: '🌍', difficulty: 'hard', points: 140, theme: 'linear-gradient(135deg,#4fc3f7,#01579b)' },
+  { id: 53, title: 'خطط كرة القدم', subtitle: 'مبادئ تكتيكية لفهم طريقة اللعب', icon: '🧠', difficulty: 'medium', points: 120, theme: 'linear-gradient(135deg,#9575cd,#4527a0)' },
+  { id: 54, title: 'قراءة أرقام المباراة', subtitle: 'إحصائيات كرة القدم وكيفية فهمها', icon: '📊', difficulty: 'medium', points: 120, theme: 'linear-gradient(135deg,#a1887f,#4e342e)' }
 ];
 
 /** مسارات ملفات المراحل */
@@ -81,7 +85,9 @@ const REGISTRY = {
   41: './stages/stage-41.js', 42: './stages/stage-42.js',
   43: './stages/stage-43.js', 44: './stages/stage-44.js', 45: './stages/stage-45.js',
   46: './stages/stage-46.js', 47: './stages/stage-47.js', 48: './stages/stage-48.js',
-  49: './stages/stage-49.js', 50: './stages/stage-50.js'
+  49: './stages/stage-49.js', 50: './stages/stage-50.js',
+  51: './stages/stage-51.js', 52: './stages/stage-52.js', 53: './stages/stage-53.js',
+  54: './stages/stage-54.js'
 };
 
 /** مخزن مؤقت لتجنب التحميل المتكرر */
