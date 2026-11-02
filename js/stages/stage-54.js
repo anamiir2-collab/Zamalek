@@ -1,0 +1,1 @@
+const stage={id:54,title:"قراءة أرقام المباراة",description:"إحصائيات كرة القدم وكيفية فهمها",difficulty:"medium",points:120,questions:[]}; export default stage;
