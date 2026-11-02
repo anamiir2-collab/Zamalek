@@ -71,7 +71,11 @@ export const STAGES_INDEX = [
   { id: 59, title: 'الزمالك في المنافسات الدولية', subtitle: 'مفاهيم عن مشاركات الأندية خارج محليًا', icon: '🌍', difficulty: 'hard', points: 140, theme: 'linear-gradient(135deg,#4fc3f7,#01579b)' },
   { id: 60, title: 'التدريب واللياقة', subtitle: 'أساسيات إعداد لاعبي كرة القدم بدنيًا', icon: '💪', difficulty: 'medium', points: 120, theme: 'linear-gradient(135deg,#81c784,#2e7d32)' },
   { id: 61, title: 'مهارات كرة القدم', subtitle: 'التمرير والتسديد والمراوغة والاستقبال', icon: '⚽', difficulty: 'medium', points: 120, theme: 'linear-gradient(135deg,#a5d6a7,#2e7d32)' },
-  { id: 62, title: 'معلومات متنوعة عن الزمالك', subtitle: 'أسئلة عامة عن النادي وتاريخه وألعابه', icon: '🎯', difficulty: 'medium', points: 120, theme: 'linear-gradient(135deg,#7e57c2,#311b92)' }
+  { id: 62, title: 'معلومات متنوعة عن الزمالك', subtitle: 'أسئلة عامة عن النادي وتاريخه وألعابه', icon: '🎯', difficulty: 'medium', points: 120, theme: 'linear-gradient(135deg,#7e57c2,#311b92)' },
+  { id: 63, title: 'ألقاب الزمالك القارية', subtitle: 'سنوات وأسماء بطولات الزمالك الإفريقية', icon: '🏆', difficulty: 'hard', points: 140, theme: 'linear-gradient(135deg,#4fc3f7,#01579b)' },
+  { id: 64, title: 'قواعد كرة السلة', subtitle: 'معلومات أساسية عن قوانين كرة السلة', icon: '🏀', difficulty: 'medium', points: 120, theme: 'linear-gradient(135deg,#fff176,#f9a825)' },
+  { id: 65, title: 'قواعد كرة اليد والطائرة', subtitle: 'معلومات عن لعبتين جماعيتين في النادي', icon: '🏐', difficulty: 'medium', points: 120, theme: 'linear-gradient(135deg,#4db6ac,#00695c)' },
+  { id: 66, title: 'مفاهيم كرة القدم المتقدمة', subtitle: 'تطبيقات ومواقف داخل الملعب', icon: '🧠', difficulty: 'medium', points: 120, theme: 'linear-gradient(135deg,#9575cd,#4527a0)' }
 ];
 
 /** مسارات ملفات المراحل */
