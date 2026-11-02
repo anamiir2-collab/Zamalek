@@ -1,11 +1,12 @@
 /* ============================================================
    ZAMALEK LEGENDS – أسطورة الزمالك
-   player.js : إدارة اللاعب والمستويات
+   player.js : إدارة اللاعب والمستويات والشخصية والمفضلة
    ============================================================ */
 
-import { loadSave, saveSave, clearSave, defaultSave } from './storage.js';
+import { loadSave, saveSave, clearSave, defaultSave } from './progress-manager.js';
+import { isStageUnlocked } from './sections-manager.js';
 
-/** مستويات اللاعب بحسب إجمالي النقاط */
+/** مستويات اللاعب بحسب إجمالي نقاط الخبرة (XP) */
 export const LEVELS = [
   { name: 'مشجع جديد', min: 0, icon: '🎫' },
   { name: 'زملكاوي أصيل', min: 350, icon: '⚪' },
@@ -13,6 +14,20 @@ export const LEVELS = [
   { name: 'فارس أبيض', min: 1750, icon: '🐎' },
   { name: 'أسطورة الزمالك', min: 2500, icon: '👑' }
 ];
+
+/** عناوين أوسمة الأقسام */
+export const SECTION_MEDAL_NAMES = {
+  history: 'وسام مؤرخ القلعة',
+  football: 'وسام حارس القوانين',
+  legends: 'وسام أعز النجوم',
+  championships: 'وسام خازن الكؤوس',
+  fans: 'وسام قلب الجماهير',
+  general: 'وسام المعلومات الذهبية',
+  challenges: 'وسام بطل الأبطال',
+  'other-sports': 'وسام متعدد المواهب',
+  kids: 'وسام المستكشف الصغير',
+  pictures: 'وسام عين الصقر'
+};
 
 class PlayerManager {
   constructor() {
@@ -38,6 +53,17 @@ class PlayerManager {
     this.persist();
   }
 
+  /* ---------------- الشخصية ---------------- */
+  setCharacter(characterId) {
+    this.data.character = characterId || '';
+    this.persist();
+  }
+
+  get character() {
+    return this.data.character || '';
+  }
+
+  /* ---------------- النقاط والإجابات ---------------- */
   addPoints(pts) {
     this.data.points = Math.max(0, this.data.points + pts);
     this.persist();
@@ -62,9 +88,6 @@ class PlayerManager {
         best: Math.max(score, prev ? prev.best : 0),
         perfect: Boolean((prev && prev.perfect) || perfect)
       };
-      // فتح المرحلة التالية
-      const next = stageId + 1;
-      if (!this.data.unlocked.includes(next)) this.data.unlocked.push(next);
     }
     this.data.lastStage = stageId;
     this.persist();
@@ -75,8 +98,13 @@ class PlayerManager {
     this.persist();
   }
 
+  /**
+   * هل المرحلة مفتوحة؟
+   * المنطق الجديد: أول مرحلة في كل قسم مفتوحة، وما بعدها
+   * يُفتح بإكمال ما قبله داخل نفس القسم.
+   */
   isUnlocked(stageId) {
-    return this.data.unlocked.includes(stageId);
+    return isStageUnlocked(stageId, this.data.completed);
   }
 
   isCompleted(stageId) {
@@ -98,6 +126,41 @@ class PlayerManager {
   get accuracy() {
     const t = this.totalAnswers;
     return t === 0 ? 0 : Math.round((this.data.correct / t) * 100);
+  }
+
+  /* ---------------- المفضلة ---------------- */
+  addFavorite(item) {
+    // نمنع تكرار نفس السؤال في المفضلة
+    if (this.data.favorites.some(f => f.q === item.q)) return false;
+    this.data.favorites.unshift({
+      q: String(item.q || '').slice(0, 400),
+      fact: String(item.fact || '').slice(0, 600),
+      stageId: item.stageId || null,
+      sectionId: item.sectionId || null,
+      ts: Date.now()
+    });
+    // حد أقصى 100 عنصر لطول الحفظ
+    if (this.data.favorites.length > 100) this.data.favorites.length = 100;
+    this.persist();
+    return true;
+  }
+
+  removeFavorite(ts) {
+    this.data.favorites = this.data.favorites.filter(f => f.ts !== ts);
+    this.persist();
+  }
+
+  isFavorite(q) {
+    return this.data.favorites.some(f => f.q === q);
+  }
+
+  /* ---------------- صندوق المفاجآت ---------------- */
+  openBox(reward) {
+    this.data.boxes += 1;
+    this.data.boxHistory.unshift({ reward, ts: Date.now() });
+    if (this.data.boxHistory.length > 20) this.data.boxHistory.length = 20;
+    this.addPoints(reward.points || 0);
+    this.persist();
   }
 
   markEncyRead(id) {

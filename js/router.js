@@ -53,10 +53,13 @@ export function handleRoute() {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   const map = {
     '#/home': 'screen-home',
-    '#/stages': 'screen-stages',
+    '#/section': 'screen-section',
     '#/game': 'screen-game',
     '#/encyclopedia': 'screen-encyclopedia',
-    '#/achievements': 'screen-achievements',
+    '#/prizes': 'screen-prizes',
+    '#/profile': 'screen-profile',
+    '#/favorites': 'screen-favorites',
+    '#/help': 'screen-help',
     '#/settings': 'screen-settings'
   };
   const screenId = map[base];
