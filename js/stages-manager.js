@@ -32,7 +32,10 @@ export const STAGES_INDEX = [
   { id: 20, title: 'الاختبار الأسطوري',     subtitle: 'اختبار شامل في تاريخ الزمالك',       icon: '🎯', difficulty: 'legend', points: 160, theme: 'linear-gradient(135deg,#7e57c2,#311b92)' },
   { id: 21, title: 'ملوك دوري أبطال إفريقيا', subtitle: 'رحلة الألقاب القارية الخمسة', icon: '🏆', difficulty: 'hard', points: 140, theme: 'linear-gradient(135deg,#f9a825,#ef6c00)' },
   { id: 22, title: 'أبطال الكونفدرالية', subtitle: 'ليالي المجد في كأس الاتحاد الإفريقي', icon: '🌍', difficulty: 'hard', points: 140, theme: 'linear-gradient(135deg,#26a69a,#00695c)' },
-  { id: 23, title: 'كؤوس السوبر الإفريقي', subtitle: 'خمس محطات ذهبية في السوبر القاري', icon: '⭐', difficulty: 'hard', points: 140, theme: 'linear-gradient(135deg,#7e57c2,#4527a0)' }
+  { id: 23, title: 'كؤوس السوبر الإفريقي', subtitle: 'خمس محطات ذهبية في السوبر القاري', icon: '⭐', difficulty: 'hard', points: 140, theme: 'linear-gradient(135deg,#7e57c2,#4527a0)' },
+  { id: 24, title: 'تاريخ كأس مصر', subtitle: 'محطات الزمالك في أقدم مسابقات الكأس المحلية', icon: '🥇', difficulty: 'medium', points: 120, theme: 'linear-gradient(135deg,#ba68c8,#6a1b9a)' },
+  { id: 25, title: 'ملوك الدوري المصري', subtitle: 'رحلة الزمالك عبر مواسم الدوري الممتاز', icon: '🏆', difficulty: 'medium', points: 120, theme: 'linear-gradient(135deg,#ff8a65,#d84315)' },
+  { id: 26, title: 'السوبر المصري', subtitle: 'مباريات حسم الكؤوس المحلية ومواجهات القمة', icon: '⚽', difficulty: 'medium', points: 120, theme: 'linear-gradient(135deg,#4db6ac,#00695c)' }
 ];
 
 /** مسارات ملفات المراحل */
@@ -44,7 +47,8 @@ const REGISTRY = {
   13: './stages/stage-13.js', 14: './stages/stage-14.js', 15: './stages/stage-15.js',
   16: './stages/stage-16.js', 17: './stages/stage-17.js', 18: './stages/stage-18.js',
   19: './stages/stage-19.js', 20: './stages/stage-20.js',
-  21: './stages/stage-21.js', 22: './stages/stage-22.js', 23: './stages/stage-23.js'
+  21: './stages/stage-21.js', 22: './stages/stage-22.js', 23: './stages/stage-23.js',
+  24: './stages/stage-24.js', 25: './stages/stage-25.js', 26: './stages/stage-26.js'
 };
 
 /** مخزن مؤقت لتجنب التحميل المتكرر */
