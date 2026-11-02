@@ -75,7 +75,11 @@ export const STAGES_INDEX = [
   { id: 63, title: 'ألقاب الزمالك القارية', subtitle: 'سنوات وأسماء بطولات الزمالك الإفريقية', icon: '🏆', difficulty: 'hard', points: 140, theme: 'linear-gradient(135deg,#4fc3f7,#01579b)' },
   { id: 64, title: 'قواعد كرة السلة', subtitle: 'معلومات أساسية عن قوانين كرة السلة', icon: '🏀', difficulty: 'medium', points: 120, theme: 'linear-gradient(135deg,#fff176,#f9a825)' },
   { id: 65, title: 'قواعد كرة اليد والطائرة', subtitle: 'معلومات عن لعبتين جماعيتين في النادي', icon: '🏐', difficulty: 'medium', points: 120, theme: 'linear-gradient(135deg,#4db6ac,#00695c)' },
-  { id: 66, title: 'مفاهيم كرة القدم المتقدمة', subtitle: 'تطبيقات ومواقف داخل الملعب', icon: '🧠', difficulty: 'medium', points: 120, theme: 'linear-gradient(135deg,#9575cd,#4527a0)' }
+  { id: 66, title: 'مفاهيم كرة القدم المتقدمة', subtitle: 'تطبيقات ومواقف داخل الملعب', icon: '🧠', difficulty: 'medium', points: 120, theme: 'linear-gradient(135deg,#9575cd,#4527a0)' },
+  { id: 67, title: 'أساطير القلعة البيضاء', subtitle: 'نجوم وشخصيات ارتبطت بتاريخ الزمالك', icon: '🌟', difficulty: 'medium', points: 120, theme: 'linear-gradient(135deg,#f06292,#ad1457)' },
+  { id: 68, title: 'قوانين ومواقف المباراة', subtitle: 'أسئلة تطبيقية في قوانين كرة القدم', icon: '⚖️', difficulty: 'medium', points: 120, theme: 'linear-gradient(135deg,#ffca28,#f57f17)' },
+  { id: 69, title: 'رياضات الزمالك الأخرى', subtitle: 'معلومات عن ألعاب جماعية وفردية متنوعة', icon: '🏅', difficulty: 'medium', points: 120, theme: 'linear-gradient(135deg,#fff176,#f9a825)' },
+  { id: 70, title: 'التحدي الأبيض الأخير', subtitle: 'اختبار نهائي متنوع في الزمالك وكرة القدم', icon: '🎯', difficulty: 'legend', points: 160, theme: 'linear-gradient(135deg,#7e57c2,#311b92)' }
 ];
 
 /** مسارات ملفات المراحل */
