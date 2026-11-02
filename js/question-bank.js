@@ -53,9 +53,38 @@ function makeVariants(q, index) {
     }
   }
 
-  // صياغة إضافية أو ترتيب بديل، مع إبقاء بنية السؤال الأصلية.
+  // تنويعات صحيحة للأسئلة التي لا تعتمد على اختيارات متعددة.
+  if (q.type === 'truefalse' && !options.length) {
+    out.push(cloneQuestion(q, index * 10 + 2, {
+      question: 'تحقق من صحة المعلومة التالية: ' + q.question
+    }));
+    out.push(cloneQuestion(q, index * 10 + 3, {
+      question: 'في تاريخ الزمالك، هل العبارة الآتية صحيحة؟ ' + q.question
+    }));
+    out.push(cloneQuestion(q, index * 10 + 4, {
+      question: 'اختر صح أو خطأ: ' + q.question
+    }));
+    out.push(cloneQuestion(q, index * 10 + 5, {
+      question: 'اختبر ذاكرتك — ' + q.question
+    }));
+  } else if (q.type === 'order') {
+    out.push(cloneQuestion(q, index * 10 + 2, {
+      question: 'رتّب المحطات التالية زمنيًا: ' + q.question
+    }));
+    out.push(cloneQuestion(q, index * 10 + 3, {
+      question: 'تحدي التسلسل التاريخي: ' + q.question
+    }));
+    out.push(cloneQuestion(q, index * 10 + 4, {
+      question: 'من الأقدم إلى الأحدث: ' + q.question
+    }));
+    out.push(cloneQuestion(q, index * 10 + 5, {
+      question: 'رتّب أحداث القلعة البيضاء: ' + q.question
+    }));
+  }
+
+  // صياغة إضافية مع إبقاء بنية السؤال الأصلية.
   out.push(cloneQuestion(q, index * 10 + 6, {
-    question: (q.type === 'order' ? 'رتّب من جديد — ' : 'من ذاكرة القلعة البيضاء: ') + q.question
+    question: (q.type === 'order' ? 'ترتيب إضافي — ' : 'من ذاكرة القلعة البيضاء: ') + q.question
   }));
 
   return out;
