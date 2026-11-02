@@ -8,7 +8,7 @@
 
 import { questionPoints, starsFromRatio, isPassed, DIFFICULTY_LABELS } from './scoring.js';
 import { player } from './player.js';
-import { loadStage } from './stages-manager.js';
+import { loadStage, STAGES_INDEX } from './stages-manager.js';
 import { navigate } from './router.js';
 
 /** رسوم توضيحية أصلية للأسئلة المصورة (SVG مولّد برمجيًا — لا صور محمية بحقوق) */
@@ -358,7 +358,7 @@ class GameEngine {
 
   renderResult({ passed, stars, finalScore, gained, ratio, total, perfect }) {
     const area = document.getElementById('game-area');
-    const nextStageExists = this.stage.id < 20;
+    const nextStageExists = this.stage.id < STAGES_INDEX.length;
     const nextUnlocked = nextStageExists && player.isUnlocked(this.stage.id + 1);
     const best = player.data.completed[this.stage.id];
 
